@@ -106,6 +106,12 @@ If I take the 120 credits I earned off-peak and subtract the 96 credits I used f
 
 e.g in above instance your baseline is 20% and if you use 10% of the CPU you are accumulating (20%-10%)/100 = 0.1 credit per minute.
 
+### Q: What happens when all credits are consumed?
+
+**A**: The virtual machine is restricted to using the baseline CPU resources (throttled) when the consumed credits reach 0 such as during an extended period of CPU consumption above baseline across all vCPU. For example, if the baseline is 20%, the CPU resources available will restricted to 20%. When CPU usage drops below the baseline, credits will begin accumulating again.
+
+If this occurs frequently, consider upgrading to a larger size B-series virtual machine or moving away from the B-series virtual machines to another series where resources are guaranteed.
+
 ### Q: Does the B-Series support Premium Storage data disks?
 **A**: Yes, all B-Series sizes support Premium Storage data disks.   
 	
